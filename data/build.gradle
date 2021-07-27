@@ -41,6 +41,7 @@ dependencies {
     implementation (Deps.kotlinStdLib)
     implementation (Deps.coreKtx)
     implementation (Deps.appcompat)
+    implementation 'com.google.firebase:firebase-database-ktx:20.0.1'
 
     //Test
     testImplementation (Deps.junit)
