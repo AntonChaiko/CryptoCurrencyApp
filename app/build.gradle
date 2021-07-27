@@ -3,6 +3,7 @@ plugins {
     id 'kotlin-android'
     id 'kotlin-kapt'
     id 'com.google.gms.google-services'
+    id 'com.google.firebase.crashlytics'
 }
 
 android {
@@ -47,7 +48,11 @@ dependencies {
     //UI
     implementation (Deps.constraintLayout)
     implementation (Deps.material)
+
+    //fireabase
     implementation 'com.google.firebase:firebase-auth-ktx:21.0.1'
+    implementation 'com.google.firebase:firebase-crashlytics-ktx:18.2.0'
+    implementation 'com.google.firebase:firebase-analytics-ktx:19.0.0'
 
     //Test
     testImplementation (Deps.junit)
