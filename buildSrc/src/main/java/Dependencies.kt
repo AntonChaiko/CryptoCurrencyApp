@@ -21,6 +21,9 @@ object Versions {
     //UI
     const val material = "1.4.0"
     const val constraintLayout = "2.0.4"
+
+    //LiveData
+    const val lifecycle = "2.4.0-alpha02"
 }
 
 object Deps {
@@ -40,4 +43,11 @@ object Deps {
     //UI
     const val material = "com.google.android.material:material:${Versions.material}"
     const val constraintLayout = "androidx.constraintlayout:constraintlayout:${Versions.constraintLayout}"
+
+    //LiveData
+    const val lifecycleViewModel = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.lifecycle}"
+    const val lifecycleLiveData = "androidx.lifecycle:lifecycle-livedata-ktx:${Versions.lifecycle}"
+    const val lifecycleCommon = "androidx.lifecycle:lifecycle-common-java8:${Versions.lifecycle}"
+    const val lifecycleRuntime = "androidx.lifecycle:lifecycle-runtime-ktx:${Versions.lifecycle}"
+
 }

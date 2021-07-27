@@ -55,6 +55,17 @@ dependencies {
     implementation 'com.google.firebase:firebase-analytics-ktx:19.0.0'
     implementation 'com.google.firebase:firebase-database-ktx:20.0.1'
 
+
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+
+    //lifecycle
+    implementation (Deps.lifecycleCommon)
+    implementation (Deps.lifecycleLiveData)
+    implementation (Deps.lifecycleRuntime)
+    implementation (Deps.lifecycleViewModel)
+
     //Test
     testImplementation (Deps.junit)
     androidTestImplementation (Deps.testRunner)
