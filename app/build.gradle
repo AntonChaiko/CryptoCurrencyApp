@@ -1,18 +1,19 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'kotlin-kapt'
 }
 
 android {
-    compileSdkVersion 30
+    compileSdkVersion Versions.compileSdkVersion
     buildToolsVersion "30.0.3"
 
     defaultConfig {
-        applicationId "com.example.cryptocurrency"
-        minSdkVersion 23
-        targetSdkVersion 30
-        versionCode 1
-        versionName "1.0"
+        applicationId Versions.applicationId
+        minSdkVersion Versions.minSdkVersion
+        targetSdkVersion Versions.targetSdkVersion
+        versionCode Versions.applicationVersionCode
+        versionName Versions.applicationVersionName
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -30,16 +31,24 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    buildFeatures {
+        dataBinding = true
+    }
 }
 
 dependencies {
 
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    implementation 'androidx.core:core-ktx:1.6.0'
-    implementation 'androidx.appcompat:appcompat:1.3.1'
-    implementation 'com.google.android.material:material:1.4.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
-    testImplementation 'junit:junit:4.+'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    //kotlin
+    implementation (Deps.kotlinStdLib)
+    implementation (Deps.coreKtx)
+    implementation (Deps.appcompat)
+
+    //UI
+    implementation (Deps.constraintLayout)
+    implementation (Deps.material)
+
+    //Test
+    testImplementation (Deps.junit)
+    androidTestImplementation (Deps.testRunner)
+    androidTestImplementation (Deps.espressoCore)
 }
