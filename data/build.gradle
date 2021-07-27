@@ -1,5 +1,5 @@
 plugins {
-    id 'com.android.application'
+    id 'com.android.library'
     id 'kotlin-android'
     id 'kotlin-kapt'
 }
@@ -9,13 +9,14 @@ android {
     buildToolsVersion "30.0.3"
 
     defaultConfig {
-        applicationId Versions.applicationId
+
         minSdkVersion Versions.minSdkVersion
         targetSdkVersion Versions.targetSdkVersion
         versionCode Versions.applicationVersionCode
         versionName Versions.applicationVersionName
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
     }
 
     buildTypes {
@@ -31,9 +32,6 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
-    buildFeatures {
-        dataBinding = true
-    }
 }
 
 dependencies {
@@ -42,10 +40,6 @@ dependencies {
     implementation (Deps.kotlinStdLib)
     implementation (Deps.coreKtx)
     implementation (Deps.appcompat)
-
-    //UI
-    implementation (Deps.constraintLayout)
-    implementation (Deps.material)
 
     //Test
     testImplementation (Deps.junit)
