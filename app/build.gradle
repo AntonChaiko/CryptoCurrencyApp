@@ -66,6 +66,12 @@ dependencies {
     implementation (Deps.lifecycleRuntime)
     implementation (Deps.lifecycleViewModel)
 
+    //navigation
+    implementation (Deps.navFragment)
+    implementation (Deps.navUi)
+    implementation (Deps.navDynamic)
+    implementation (Deps.navRuntime)
+
     //Test
     testImplementation (Deps.junit)
     androidTestImplementation (Deps.testRunner)

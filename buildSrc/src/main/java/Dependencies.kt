@@ -24,6 +24,9 @@ object Versions {
 
     //LiveData
     const val lifecycle = "2.4.0-alpha02"
+
+    //Navigation
+    const val navComponents = "2.3.5"
 }
 
 object Deps {
@@ -49,5 +52,11 @@ object Deps {
     const val lifecycleLiveData = "androidx.lifecycle:lifecycle-livedata-ktx:${Versions.lifecycle}"
     const val lifecycleCommon = "androidx.lifecycle:lifecycle-common-java8:${Versions.lifecycle}"
     const val lifecycleRuntime = "androidx.lifecycle:lifecycle-runtime-ktx:${Versions.lifecycle}"
+
+    //navigation
+    const val navFragment = "androidx.navigation:navigation-fragment-ktx:${Versions.navComponents}"
+    const val navRuntime = "androidx.navigation:navigation-runtime:${Versions.navComponents}"
+    const val navUi = "androidx.navigation:navigation-ui-ktx:${Versions.navComponents}"
+    const val navDynamic = "androidx.navigation:navigation-dynamic-features-fragment:${Versions.navComponents}"
 
 }

@@ -1,1 +1,1 @@
-C:\Users\User\AndroidStudioProjects\CryptoCurrency\buildSrc\build\classes\kotlin\main\Deps.class;C:\Users\User\AndroidStudioProjects\CryptoCurrency\buildSrc\build\classes\kotlin\main\Versions.class
+C:\Users\smart\StudioProjects\cryptocurrency\buildSrc\build\classes\kotlin\main\Deps.class;C:\Users\smart\StudioProjects\cryptocurrency\buildSrc\build\classes\kotlin\main\Versions.class
