@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-kapt'
+    id 'com.google.gms.google-services'
 }
 
 android {
@@ -46,6 +47,7 @@ dependencies {
     //UI
     implementation (Deps.constraintLayout)
     implementation (Deps.material)
+    implementation 'com.google.firebase:firebase-auth-ktx:21.0.1'
 
     //Test
     testImplementation (Deps.junit)
