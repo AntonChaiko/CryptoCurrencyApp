@@ -1,6 +1,6 @@
 package com.example.cryptocurrency.ui.screens.feedfragment
 
-import android.os.RemoteCallbackList
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -26,13 +26,11 @@ class FeedViewModel(
     val data: LiveData<List<Data>>
         get() = _data
 
-
     init {
-        getData()
+        fetchData()
     }
 
-    private fun getData() {
-        _loadingState.postValue(LoadingState.LOADING)
+    private fun fetchData() {
         viewModelScope.launch {
             _data.value = cryptoCurrencyRepositoryImpl.getData()
         }
@@ -42,6 +40,7 @@ class FeedViewModel(
         if (response.isSuccessful) {
             _data.postValue(response.body())
             _loadingState.postValue(LoadingState.LOADED)
+            Log.d("asd", "success")
         } else {
             _loadingState.postValue(LoadingState.error(response.errorBody().toString()))
         }
@@ -49,5 +48,7 @@ class FeedViewModel(
 
     override fun onFailure(call: Call<List<Data>>, t: Throwable) =
         _loadingState.postValue(LoadingState.error(t.message))
+
+
 
 }
