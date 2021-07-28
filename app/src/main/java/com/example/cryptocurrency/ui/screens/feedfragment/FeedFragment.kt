@@ -15,11 +15,13 @@ class FeedFragment : BaseFragment<FeedFragmentBinding>() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.testApiCallButton.setOnClickListener {
-            viewModel.data.forEach {
-                Log.d("asd", it.name)
-            }
-        }
+        viewModel.data.observe(viewLifecycleOwner, {
+            it.forEach { data -> binding.testTextView.append("${data.name}, ${data.symbol}, ${data.id} \n") }
+        })
+
+        viewModel.loadingState.observe(viewLifecycleOwner, {
+            Log.d("asd", it.status.toString())
+        })
     }
 
     override fun getFragmentView(): Int = R.layout.feed_fragment
