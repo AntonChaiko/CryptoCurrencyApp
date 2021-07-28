@@ -1,31 +1,27 @@
 package com.example.cryptocurrency.ui.screens.feedfragment
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
+import android.util.Log
 import android.view.View
-import android.view.ViewGroup
 import com.example.cryptocurrency.R
+import com.example.cryptocurrency.databinding.FeedFragmentBinding
+import com.example.cryptocurrency.ui.base.BaseFragment
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class FeedFragment : Fragment() {
+class FeedFragment : BaseFragment<FeedFragmentBinding>() {
 
-    companion object {
-        fun newInstance() = FeedFragment()
+    private val viewModel: FeedViewModel by viewModel()
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        binding.testApiCallButton.setOnClickListener {
+            viewModel.data.forEach {
+                Log.d("asd", it.name)
+            }
+        }
     }
 
-    private lateinit var viewModel: FeedViewModel
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.feed_fragment, container, false)
-    }
-
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(FeedViewModel::class.java)
-    }
+    override fun getFragmentView(): Int = R.layout.feed_fragment
 
 }

@@ -3,6 +3,7 @@ package com.example.cryptocurrency.ui.screens.loginfragment
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import androidx.navigation.fragment.findNavController
 import com.example.cryptocurrency.R
 import com.example.cryptocurrency.databinding.LoginFragmentBinding
 import com.example.cryptocurrency.ui.base.BaseFragment
@@ -26,7 +27,12 @@ class LoginFragment : BaseFragment<LoginFragmentBinding>() {
         )
 
         binding.signInButton.setOnClickListener { signIn() }
-        binding.logOutButton.setOnClickListener { signOut() }
+        binding.logOutButton.setOnClickListener {
+
+            findNavController().navigate(R.id.action_loginFragment_to_feedFragment)
+
+//            signOut()
+        }
 
     }
 
