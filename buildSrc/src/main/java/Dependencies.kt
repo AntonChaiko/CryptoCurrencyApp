@@ -23,12 +23,22 @@ object Versions {
     const val constraintLayout = "2.0.4"
 
     //LiveData
-    const val lifecycle = "2.4.0-alpha02"
+    const val lifecycle = "2.3.1"
 
     //Navigation
     const val navComponents = "2.3.5"
 
+    //dagger
     const val dagger = "2.36"
+
+    //koin
+    const val koin = "3.1.2"
+
+    //moshi
+    const val moshi = "1.9.3"
+
+    //retrofit
+    const val retrofit = "2.9.0"
 }
 
 object Deps {
@@ -50,7 +60,7 @@ object Deps {
     const val constraintLayout =
         "androidx.constraintlayout:constraintlayout:${Versions.constraintLayout}"
 
-    //LiveData
+    //lifecycle
     const val lifecycleViewModel =
         "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.lifecycle}"
     const val lifecycleLiveData = "androidx.lifecycle:lifecycle-livedata-ktx:${Versions.lifecycle}"
@@ -64,9 +74,18 @@ object Deps {
     const val navDynamic =
         "androidx.navigation:navigation-dynamic-features-fragment:${Versions.navComponents}"
 
-
     //Dagger
     const val dagger = "com.google.dagger:dagger:${Versions.dagger}"
+
+    //Koin
+    const val koin = "io.insert-koin:koin-android:${Versions.koin}"
+
+    //Retrofit
+    const val retrofit = "com.squareup.retrofit2:converter-moshi:${Versions.retrofit}"
+
+    //Moshi
+    const val moshi = "com.squareup.moshi:moshi-kotlin:${Versions.moshi}"
+
 }
 
 object Kapt {

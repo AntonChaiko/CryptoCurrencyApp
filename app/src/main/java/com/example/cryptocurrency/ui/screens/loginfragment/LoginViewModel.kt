@@ -33,4 +33,5 @@ class LoginViewModel(
         val credential = GoogleAuthProvider.getCredential(idToken, null)
         auth.signInWithCredential(credential)
     }
+
 }

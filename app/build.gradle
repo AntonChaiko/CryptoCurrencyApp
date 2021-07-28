@@ -60,19 +60,12 @@ dependencies {
     implementation 'com.google.android.gms:play-services-auth:19.2.0'
     implementation platform('com.google.firebase:firebase-bom:28.3.0')
 
+    //retrofit & moshi
+    implementation(Deps.retrofit)
+    implementation(Deps.moshi)
 
-//    //Koin
-    implementation "io.insert-koin:koin-android:3.1.2"
-//    implementation "io.insert-koin:koin-androidx-viewmodel:3.1.2"
-
-////    implementation "org.koin:koin-android-architecture:0.8.2"
-
-//    def koin_version = "3.0.1"
-//    implementation "io.insert-koin.koin:koin-android:$koin_version"
-//    // use org.koin:koin-android-viewmodel instead for non-androidx projects!
-//    implementation "io.insert-koin.koin:koin-androidx-viewmodel:$koin_version"
-//    implementation "io.insert-koin.koin:koin-core:$koin_version"
-
+    //Koin
+    implementation(Deps.koin)
 
     //lifecycle
     implementation(Deps.lifecycleCommon)
@@ -85,6 +78,9 @@ dependencies {
     implementation(Deps.navUi)
     implementation(Deps.navDynamic)
     implementation(Deps.navRuntime)
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 
     //Test
     testImplementation(Deps.junit)
