@@ -39,15 +39,16 @@ android {
 }
 
 dependencies {
+    implementation project(path: ':data')
 
     //kotlin
-    implementation (Deps.kotlinStdLib)
-    implementation (Deps.coreKtx)
-    implementation (Deps.appcompat)
+    implementation(Deps.kotlinStdLib)
+    implementation(Deps.coreKtx)
+    implementation(Deps.appcompat)
 
     //UI
-    implementation (Deps.constraintLayout)
-    implementation (Deps.material)
+    implementation(Deps.constraintLayout)
+    implementation(Deps.material)
 
     //firebase
     implementation 'com.google.firebase:firebase-auth-ktx'
@@ -57,26 +58,37 @@ dependencies {
 
     //google
     implementation 'com.google.android.gms:play-services-auth:19.2.0'
-
     implementation platform('com.google.firebase:firebase-bom:28.3.0')
 
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+
+//    //Koin
+    implementation "io.insert-koin:koin-android:3.1.2"
+//    implementation "io.insert-koin:koin-androidx-viewmodel:3.1.2"
+
+////    implementation "org.koin:koin-android-architecture:0.8.2"
+
+//    def koin_version = "3.0.1"
+//    implementation "io.insert-koin.koin:koin-android:$koin_version"
+//    // use org.koin:koin-android-viewmodel instead for non-androidx projects!
+//    implementation "io.insert-koin.koin:koin-androidx-viewmodel:$koin_version"
+//    implementation "io.insert-koin.koin:koin-core:$koin_version"
+
 
     //lifecycle
-    implementation (Deps.lifecycleCommon)
-    implementation (Deps.lifecycleLiveData)
-    implementation (Deps.lifecycleRuntime)
-    implementation (Deps.lifecycleViewModel)
+    implementation(Deps.lifecycleCommon)
+    implementation(Deps.lifecycleLiveData)
+    implementation(Deps.lifecycleRuntime)
+    implementation(Deps.lifecycleViewModel)
 
     //navigation
-    implementation (Deps.navFragment)
-    implementation (Deps.navUi)
-    implementation (Deps.navDynamic)
-    implementation (Deps.navRuntime)
+    implementation(Deps.navFragment)
+    implementation(Deps.navUi)
+    implementation(Deps.navDynamic)
+    implementation(Deps.navRuntime)
 
     //Test
-    testImplementation (Deps.junit)
-    androidTestImplementation (Deps.testRunner)
-    androidTestImplementation (Deps.espressoCore)
+    testImplementation(Deps.junit)
+    androidTestImplementation(Deps.testRunner)
+    androidTestImplementation(Deps.espressoCore)
+
 }

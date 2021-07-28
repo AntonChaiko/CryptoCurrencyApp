@@ -27,6 +27,8 @@ object Versions {
 
     //Navigation
     const val navComponents = "2.3.5"
+
+    const val dagger = "2.36"
 }
 
 object Deps {
@@ -45,10 +47,12 @@ object Deps {
 
     //UI
     const val material = "com.google.android.material:material:${Versions.material}"
-    const val constraintLayout = "androidx.constraintlayout:constraintlayout:${Versions.constraintLayout}"
+    const val constraintLayout =
+        "androidx.constraintlayout:constraintlayout:${Versions.constraintLayout}"
 
     //LiveData
-    const val lifecycleViewModel = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.lifecycle}"
+    const val lifecycleViewModel =
+        "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.lifecycle}"
     const val lifecycleLiveData = "androidx.lifecycle:lifecycle-livedata-ktx:${Versions.lifecycle}"
     const val lifecycleCommon = "androidx.lifecycle:lifecycle-common-java8:${Versions.lifecycle}"
     const val lifecycleRuntime = "androidx.lifecycle:lifecycle-runtime-ktx:${Versions.lifecycle}"
@@ -57,6 +61,15 @@ object Deps {
     const val navFragment = "androidx.navigation:navigation-fragment-ktx:${Versions.navComponents}"
     const val navRuntime = "androidx.navigation:navigation-runtime:${Versions.navComponents}"
     const val navUi = "androidx.navigation:navigation-ui-ktx:${Versions.navComponents}"
-    const val navDynamic = "androidx.navigation:navigation-dynamic-features-fragment:${Versions.navComponents}"
+    const val navDynamic =
+        "androidx.navigation:navigation-dynamic-features-fragment:${Versions.navComponents}"
 
+
+    //Dagger
+    const val dagger = "com.google.dagger:dagger:${Versions.dagger}"
+}
+
+object Kapt {
+    //Dagger
+    const val daggerCompiler = "com.google.dagger:dagger-compiler:${Versions.dagger}"
 }
