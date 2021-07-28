@@ -25,15 +25,14 @@ class LoginFragment : BaseFragment<LoginFragmentBinding>() {
             viewModel.googleSignInOptions
         )
 
-        binding.signInButton.setOnClickListener {
-            signIn()
-        }
+        binding.signInButton.setOnClickListener { signIn() }
+        binding.logOutButton.setOnClickListener { signOut() }
 
-        binding.logOutButton.setOnClickListener {
-            googleSignInClient.signOut()
-            viewModel.auth.signOut()
-        }
+    }
 
+    private fun signOut() {
+        googleSignInClient.signOut()
+        viewModel.auth.signOut()
     }
 
     private fun signIn() {
