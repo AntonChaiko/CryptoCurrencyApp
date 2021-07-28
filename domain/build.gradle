@@ -38,6 +38,7 @@ dependencies {
     implementation (Deps.kotlinStdLib)
     implementation (Deps.coreKtx)
     implementation (Deps.appcompat)
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 
     //Test
     testImplementation (Deps.junit)
