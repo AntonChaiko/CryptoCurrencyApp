@@ -1,4 +1,4 @@
-package com.example.data.modules
+package com.example.data.models
 
 import com.squareup.moshi.Json
 
@@ -9,4 +9,8 @@ data class Data(
     val name: String,
     @Json(name = "symbol")
     val symbol: String,
+    @Json(name = "date_added")
+    val dateAdded: String,
+    @Json(name = "cmc_rank")
+    val cmcRank: Int,
 )

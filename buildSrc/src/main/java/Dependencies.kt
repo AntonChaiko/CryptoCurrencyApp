@@ -22,8 +22,8 @@ object Versions {
     const val material = "1.4.0"
     const val constraintLayout = "2.0.4"
 
-    //LiveData
-    const val lifecycle = "2.3.1"
+    //lifecycler
+    const val lifecycle = "2.4.0-alpha02"
 
     //Navigation
     const val navComponents = "2.3.5"

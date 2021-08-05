@@ -10,8 +10,6 @@ android {
     defaultConfig {
         minSdkVersion Versions.minSdkVersion
         targetSdkVersion Versions.targetSdkVersion
-        versionCode Versions.applicationVersionCode
-        versionName Versions.applicationVersionName
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
@@ -33,6 +31,7 @@ android {
 }
 
 dependencies {
+    implementation project(path: ':domain')
 
 
     //kotlin
@@ -51,4 +50,7 @@ dependencies {
 
     //Koin
     implementation(Deps.koin)
+
+    //Paging
+    implementation "androidx.paging:paging-runtime-ktx:3.0.1"
 }

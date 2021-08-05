@@ -1,54 +1,41 @@
 package com.example.cryptocurrency.ui.screens.feedfragment
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.cryptocurrency.utils.LoadingState
-import com.example.data.modules.Data
+import androidx.paging.PagingData
+import androidx.paging.cachedIn
 import com.example.data.repository.CryptoCurrencyRepositoryImpl
-import kotlinx.coroutines.launch
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
+import com.example.domain.CryptoDto
+import kotlinx.coroutines.flow.Flow
 
 class FeedViewModel(
-    val cryptoCurrencyRepositoryImpl: CryptoCurrencyRepositoryImpl
+    private val cryptoCurrencyRepositoryImpl: CryptoCurrencyRepositoryImpl
 ) :
-    ViewModel(), Callback<List<Data>> {
+    ViewModel() {
 
-    private val _loadingState = MutableLiveData<LoadingState>()
-    val loadingState: LiveData<LoadingState>
-        get() = _loadingState
-
-    private val _data = MutableLiveData<List<Data>>()
-    val data: LiveData<List<Data>>
+    private val _data = MutableLiveData<List<CryptoDto>>()
+    val cryptoDto: LiveData<List<CryptoDto>>
         get() = _data
 
+    var currentSearchResult: Flow<PagingData<CryptoDto>>? = null
+
+
     init {
-        fetchData()
+
     }
 
-    private fun fetchData() {
-        viewModelScope.launch {
-            _data.value = cryptoCurrencyRepositoryImpl.getData()
+    fun searchRepo(): Flow<PagingData<CryptoDto>> {
+        val lastResult = currentSearchResult
+        if (lastResult != null) {
+            return lastResult
         }
+        val newResult: Flow<PagingData<CryptoDto>> = cryptoCurrencyRepositoryImpl.getSearchResultStream()
+            .cachedIn(viewModelScope)
+        currentSearchResult = newResult
+        return newResult
     }
-
-    override fun onResponse(call: Call<List<Data>>, response: Response<List<Data>>) {
-        if (response.isSuccessful) {
-            _data.postValue(response.body())
-            _loadingState.postValue(LoadingState.LOADED)
-            Log.d("asd", "success")
-        } else {
-            _loadingState.postValue(LoadingState.error(response.errorBody().toString()))
-        }
-    }
-
-    override fun onFailure(call: Call<List<Data>>, t: Throwable) =
-        _loadingState.postValue(LoadingState.error(t.message))
-
 
 
 }

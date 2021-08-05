@@ -30,8 +30,7 @@ class LoginFragment : BaseFragment<LoginFragmentBinding>() {
         binding.logOutButton.setOnClickListener {
 
             findNavController().navigate(R.id.action_loginFragment_to_feedFragment)
-
-//            signOut()
+            
         }
 
     }

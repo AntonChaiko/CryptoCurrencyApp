@@ -5,4 +5,6 @@ object Constants {
     const val WEB_CLIENT_ID = "110355868158-aiu0lj7h39reiraas902qlje4vtrakbj.apps.googleusercontent.com"
     const val BASE_URL = "https://pro-api.coinmarketcap.com/v1/"
     const val API_KEY = "4292e02e-6f78-4f53-9042-fbff07fcfd2e"
+    const val MAX_PAGE_SIZE = 20
+    const val DEFAULT_PAGE_SIZE = 1
 }
