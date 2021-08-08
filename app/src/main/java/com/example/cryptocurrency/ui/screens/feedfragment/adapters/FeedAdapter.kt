@@ -6,17 +6,12 @@ import android.view.ViewGroup
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import coil.load
-import coil.request.CachePolicy
-import coil.request.ImageRequest
-import coil.size.ViewSizeResolver
 import com.example.cryptocurrency.R
 import com.example.cryptocurrency.databinding.FeedItemViewBinding
 import com.example.domain.CryptoDto
-import kotlin.coroutines.coroutineContext
 
 class FeedAdapter(
-//    val imageDetails: (result: Data) -> Unit
+    val checkPrice: (price: Double) -> Int
 ) :
     PagingDataAdapter<CryptoDto, FeedAdapter.ImagesViewHolder>(ArticleDiffItemCallback) {
 
@@ -35,17 +30,24 @@ class FeedAdapter(
         private val binding = FeedItemViewBinding.bind(itemView)
         fun bind(cryptoDto: CryptoDto?) = with(itemView) {
             binding.cryptoDto = cryptoDto
+
+            if (cryptoDto != null) {
+                binding.priceHourTextView.setTextColor(checkPrice(cryptoDto.percentChange1h))
+                binding.priceDayTextView.setTextColor(checkPrice(cryptoDto.percentChange24h))
+                binding.priceWeekTextView.setTextColor(checkPrice(cryptoDto.percentChange7d))
+            }
+        }
     }
-}
 
 
-private object ArticleDiffItemCallback : DiffUtil.ItemCallback<CryptoDto>() {
+    private object ArticleDiffItemCallback : DiffUtil.ItemCallback<CryptoDto>() {
 
-    override fun areItemsTheSame(oldItem: CryptoDto, newItem: CryptoDto): Boolean {
-        return oldItem == newItem
-    }
+        override fun areItemsTheSame(oldItem: CryptoDto, newItem: CryptoDto): Boolean {
+            return oldItem == newItem
+        }
 
-    override fun areContentsTheSame(oldItem: CryptoDto, newItem: CryptoDto): Boolean {
-        return oldItem.id == newItem.id
+        override fun areContentsTheSame(oldItem: CryptoDto, newItem: CryptoDto): Boolean {
+            return oldItem.id == newItem.id
+        }
     }
 }

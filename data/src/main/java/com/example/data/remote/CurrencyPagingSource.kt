@@ -22,7 +22,6 @@ class CurrencyPagingSource(
 
         val position: Int = params.key ?: 1
         val pageSize: Int = params.loadSize
-
         return try {
             val responseData = currencyApiService.getCryptoCurrency(position, pageSize).items.toDomainModel()
 

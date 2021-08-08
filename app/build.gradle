@@ -4,6 +4,8 @@ plugins {
     id 'kotlin-kapt'
     id 'com.google.gms.google-services'
     id 'com.google.firebase.crashlytics'
+    id 'androidx.navigation.safeargs'
+    id("kotlin-parcelize")
 }
 
 android {
@@ -90,6 +92,8 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation project(path: ':domain')
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.3.1'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1'
 
     //Test
     testImplementation(Deps.junit)

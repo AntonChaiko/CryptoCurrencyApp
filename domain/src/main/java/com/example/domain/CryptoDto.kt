@@ -6,5 +6,9 @@ data class CryptoDto(
     val symbol: String,
     val dateAdded: String,
     val cmcRank: Int,
-    val logo: String
+    val logo: String,
+    val price: Double?,
+    val percentChange1h: Double,
+    val percentChange24h: Double,
+    val percentChange7d: Double,
 )

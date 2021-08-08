@@ -18,5 +18,12 @@
         android:id="@+id/feedFragment"
         android:name="com.example.cryptocurrency.ui.screens.feedfragment.FeedFragment"
         android:label="FeedFragment"
-        tools:layout="@layout/feed_fragment"/>
+        tools:layout="@layout/feed_fragment">
+        <argument
+            android:name="currentuser"
+            app:argType="com.example.data.models.UserEntity" />
+        <action
+            android:id="@+id/action_feedFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
 </navigation>

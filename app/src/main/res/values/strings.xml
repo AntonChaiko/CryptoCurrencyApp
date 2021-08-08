@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">CryptoCurrency</string>
+    <string name="crypto_price">Price: %.2f$</string>
+    <string name="percent_hour">1h\n%.2f\%%</string>
+    <string name="percent_day">1d\n%.2f\%%</string>
+    <string name="percent_week">7d\n%.2f\%%</string>
+
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+    <string name="setting">setting</string>
+    <string name="controls">controls</string>
+    <string name="favorites">favorites</string>
+    <string name="logout">logout</string>
 </resources>

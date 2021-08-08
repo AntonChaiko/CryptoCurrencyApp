@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:background="@color/main_background_color">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/circleImageView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="46dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/guideline"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.35" />
+
+        <TextView
+            android:id="@+id/username_text_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/guideline"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/email_text_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginBottom="16dp"
+            android:gravity="center"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/logout_button"
+            android:layout_width="76dp"
+            android:layout_height="24dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/card_view_background_color"
+            android:text="@string/logout"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="@+id/username_text_view"
+            app:layout_constraintTop_toBottomOf="@+id/username_text_view" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
